@@ -1,0 +1,8 @@
+quando utilizar um reository?
+-> quando for precisar fazer uma consulta quando ela não existe
+
+metodo save()
+
+mas um metodo save diferente por algum motivo
+
+ai preciso criar dentro do repository

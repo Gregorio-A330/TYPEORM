@@ -14,10 +14,10 @@ export default class Class {
   @Column()
   duration: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({name: 'created_At' }) //mapeando o que está na coluna do banco, senão da erro
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({name: 'updated_At' }) //mapeando o que está na coluna do banco
   updatedAt: Date;
 
 }
