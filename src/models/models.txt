@@ -1,0 +1,8 @@
+
+MODEL -> representa a tabela no banco
+
+criando via cmd
+
+-> npx typeorm entity:create -n Class -d src/models 
+
+parametro -d indica o diretório a ser incluido o arquivo caso não seja especificado no ormconfig.json ou data-xxxxx no modelo novo do typeorm

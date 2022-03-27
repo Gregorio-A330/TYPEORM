@@ -1,4 +1,7 @@
-npm run typeorm migration:create -- -n createClass 
+
+Cria o arquivo da migration
+
+npm run typeorm migration:create -- -n createClass  
 
 
 obs.:
@@ -68,3 +71,6 @@ Query has been executed. Result:
 //retornou vazio pois ainda não foi populado
 
 //----------------------------------------------------------------------------------------------------------------\\
+
+
+
