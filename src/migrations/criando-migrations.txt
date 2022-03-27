@@ -1,0 +1,70 @@
+npm run typeorm migration:create -- -n createClass 
+
+
+obs.:
+
+posso gerar uma migration a partir de um banco de dados, caso o banco esteja pronto...
+
+
+generate -> 
+
+//----------------------------------------------------------------------------------------------------------------\\
+
+execução da migration ->npm run typeorm migration:run 
+
+C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0>npm run typeorm migration:run
+
+> backend-desafio@1.0.0 typeorm C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0
+> node --require ts-node/register ./node_modules/typeorm/cli.js "migration:run"
+
+query: SELECT * FROM "information_schema"."tables" WHERE "table_schema" = current_schema() AND "table_name" = 'migrations'
+query: SELECT * FROM "migrations" "migrations" ORDER BY "id" DESC
+0 migrations are already loaded in the database.
+1 migrations were found in the source code.
+1 migrations are new migrations that needs to be executed.
+query: START TRANSACTION
+query: CREATE EXTENSION IF NOT EXISTS "uuid-ossp"
+query: CREATE TABLE "class" ("id" uuid NOT NULL DEFAULT uuid_generate_v4(), "name" varchar NOT NULL, "duration" integer NOT NULL, "created_At" timestamp NOT NULL DEFAULT now(), "update_At" timestamp NOT NULL DEFAULT now(), CONSTRAINT "PK_0b9024d21bdfba8b1bd1c300eae" PRIMARY KEY ("id"))
+query: INSERT INTO "migrations"("timestamp", "name") VALUES ($1, $2) -- PARAMETERS: [1648395901586,"CreateClass1648395901586"]
+Migration CreateClass1648395901586 has been executed successfully.
+query: COMMIT
+
+//----------------------------------------------------------------------------------------------------------------\\
+
+vizualização -> npm run typeorm migration:show
+
+C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0>npm run typeorm migration:show
+
+> backend-desafio@1.0.0 typeorm C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0
+> node --require ts-node/register ./node_modules/typeorm/cli.js "migration:show"
+
+query: SELECT * FROM "information_schema"."tables" WHERE "table_schema" = current_schema() AND "table_name" = 'migrations'
+query: SELECT * FROM "migrations" "migrations" ORDER BY "id" DESC
+ [X] CreateClass1648395901586
+
+//----------------------------------------------------------------------------------------------------------------\\
+
+desfazer a ultima migração -> npm run typeorm migration:revert
+
+
+//----------------------------------------------------------------------------------------------------------------\\
+
+Posso executar uma query direto pelo terminal 
+
+
+
+
+->> npm run typeorm query "SELECT * FROM class"
+
+C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0>npm run typeorm query "SELECT * FROM class"
+
+> backend-desafio@1.0.0 typeorm C:\Users\biel7\Desktop\Curso-Back-End\TYPEORM\Project-template-TS-0.0.0
+> node --require ts-node/register ./node_modules/typeorm/cli.js "query" "SELECT * FROM class"
+
+Running query: SELECT * FROM class
+Query has been executed. Result: 
+[]
+
+//retornou vazio pois ainda não foi populado
+
+//----------------------------------------------------------------------------------------------------------------\\
