@@ -1,12 +1,12 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
-@Entity()
+@Entity() //minha classe user é uma entidade - representa uma tabela no banco de dados
 export class User {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn() //id autoincremental
     id: number
 
-    @Column()
+    @Column() //representa uma coluna na base de dados e cria
     firstName: string
 
     @Column()
@@ -15,4 +15,4 @@ export class User {
     @Column()
     age: number
 
-}
+} //será mapeado para dentro da base de dados
