@@ -5,6 +5,7 @@
   "username": "postgres",
   "password": "docker",
   "database": "mussum",
+  "synchronize": false,
   "entities": [
     "src/models/**/*.ts"
  ],

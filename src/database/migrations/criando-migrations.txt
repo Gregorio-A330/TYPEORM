@@ -3,6 +3,9 @@ Cria o arquivo da migration
 
 npm run typeorm migration:create -- -n createClass  
 
+npm run typeorm migration:generate -- -n createClass
+//já starta com informações baseadas no model
+
 
 obs.:
 
