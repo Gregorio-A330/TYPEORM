@@ -17,6 +17,7 @@ classRouter.post('/', async (request, response) => {
     return response.status(201).json(res); //retorna conforma solicitação do save
   } catch(err) {
     console.log('err.message :>> ', err.message);
+    return response.status(400).send();
   }
 })
 
