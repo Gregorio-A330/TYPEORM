@@ -14,6 +14,9 @@ export default class Class {
   @Column()
   duration: number;
 
+  @Column()
+  exp: number;
+
   @CreateDateColumn({name: 'created_At' }) //mapeando o que está na coluna do banco, senão da erro
   createdAt: Date;
 

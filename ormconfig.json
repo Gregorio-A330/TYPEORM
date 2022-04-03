@@ -10,7 +10,7 @@
     "src/models/**/*.ts"
  ],
  "migrations": [
-  "src/migrations/**/*.ts"
+  "src/database/migrations/**/*.ts"
 ],
  "cli":{
   "migrationsDir": [
@@ -19,3 +19,5 @@
   "entitiesDir": "src/models"
   }
 }
+// local - banco local
+//heroku - banco do heroku

@@ -6,6 +6,9 @@ npm run typeorm migration:create -- -n createClass
 npm run typeorm migration:generate -- -n createClass
 //já starta com informações baseadas no model
 
+adicionar uma coluna noma em model e gerar uma nova migration...
+-> npm run typeorm migration:generate -- -n AddFieldExpClass
+
 
 obs.:
 
