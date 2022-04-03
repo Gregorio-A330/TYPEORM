@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import Lesson from "./Lesson";
 
 //class é uma entidade do banco de dados
 //parametro de entrada indicando caso seja uma tabela diferente ao da classe, caso vazio é redundante 
@@ -10,6 +11,9 @@ export default class Class {
 
   @Column({ length: 100, unique: true })
   name: string;
+
+  @OneToMany(type => Lesson, classe => Class)
+  lessons: Lesson[];
 
   @Column()
   duration: number;
