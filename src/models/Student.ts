@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import Class from './Class';
 
 @Entity('student')
 export default class Student {
@@ -11,10 +12,14 @@ export default class Student {
   @Column()
   key: number;
 
-  @CreateDateColumn({ name: 'created_At'})
+  @ManyToMany(type => Class) //many to many não há necessidade de controle em ambas as pontas
+  @JoinTable()
+  classes: Class;
+
+  @CreateDateColumn({ name: 'created_At' })
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updated_At'})
+  @UpdateDateColumn({ name: 'updated_At' })
   updatedAt: Date;
 
 }
